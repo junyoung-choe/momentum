@@ -1,12 +1,11 @@
-const WeatherForm = document.querySelector("#weather");
-const Name = WeatherForm.querySelector("span:first-child");
-const Weather = WeatherForm.querySelector("span:last-child");
+const WeatherForm = $("#weather");
+const Name = WeatherForm.find("span:first-child");
+const Weather = WeatherForm.find("span:last-child");
 function onGeoOk(position) {
-  // console.log(position);
   const lat = position.coords.latitude;
   const lng = position.coords.longitude;
   const key = "";
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}`;
   console.log(url);
 
   // URL을 부른다.
