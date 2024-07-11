@@ -22,7 +22,7 @@ $(document).ready(function () {
   }
 
   const savedUsername = localStorage.getItem(USERNAME_KEY);
-  console.log(savedUsername);
+  // console.log(savedUsername);
 
   //즉 로컬스토리지에 로그인 기록이 없을때만 리스너를 등록하는것
   if (savedUsername == null) {
