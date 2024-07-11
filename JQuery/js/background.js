@@ -2,8 +2,8 @@ const images = ["1.jpeg", "2.jpeg", "3.jpeg"];
 
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
-const bgImage = document.createElement("img");
+const bgImage = $("<img>");
 
-bgImage.src = `img/${chosenImage}`;
+bgImage.attr("src", `img/${chosenImage}`);
 
-document.body.appendChild(bgImage);
+$("body").append(bgImage);

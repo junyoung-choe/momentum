@@ -11,4 +11,4 @@ function getClock() {
 // 처음 시작 딜레이를 막기위함
 getClock();
 setInterval(getClock, 1000);
-console.log(clock.text());
+// console.log(clock.text());
