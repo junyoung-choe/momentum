@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .descendants * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("div")
+          .children("p.first")
+          .css({ color: "red", border: "2px solid red" });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="descendants" style="width: 500px">
+      div (current element)
+      <p class="first">
+        p (child)
+        <span>span (grandchild)</span>
+      </p>
+      <p class="second">
+        p (child)
+        <span>span (grandchild)</span>
+      </p>
+    </div>
+  </body>
+</html>
+
+<!-- 부모 탐색
+
+- `parent()`
+- `parents()`
+- `parentsUntil()`
+
+DOM 트리를 탐색하는 데 유용한 두 가지 jQuery 메서드는 다음과 같습니다.
+
+- `children()`
+- `find()`
+
+옆으로 이동한다.
+
+- `siblings()` 같은 라인에 있는거 모두
+- `next()` 같은 라인에 있는 다음꺼
+- `nextAll()`  같은 라인에 있는 모든 다음꺼
+- `nextUntil()` 같은 라인에 있는거 사이값 지정
+- `prev()`
+- `prevAll()`
+- `prevUntil()`
+
+필터링 한다.
+
+해당하는 요소들 중에서 필터링으로 지정한다.
+
+- `first()` 해당하는 것들중에 첫번째
+- `last()` 해당하는 것들중에 마지막
+- `eq()` 해당하는 것들중에 특정 인덱스
+- `filter()` 그중에서 id or class로 필터링
+- `not()` 그것들이 아닌것을 반환 -->
