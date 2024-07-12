@@ -12,5 +12,20 @@
     <button id="btn1">Show Text</button>
     <button id="btn2">Show HTML</button>
   </body>
-  <script src="elements.js"></script>
+  <script>
+    $(document).ready(function () {
+      function clickBtn1() {
+        alert($("p").text());
+      }
+
+      function clickBtn2() {
+        alert($("p").html());
+        // $("p").text("111");
+        // $("p").value("text", "111");
+      }
+
+      $("#btn1").click(clickBtn1);
+      $("#btn2").click(clickBtn2);
+    });
+  </script>
 </html>
