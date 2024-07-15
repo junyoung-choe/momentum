@@ -8,9 +8,12 @@ function ToDo() {
 
   useEffect(() => {
     const savedToDos = localStorage.getItem(TODOS_KEY);
+    console.log(savedToDos);
     if (savedToDos !== null) {
       const parsedToDos = JSON.parse(savedToDos);
-      setToDos(parsedToDos);
+      if (parsedToDos.length > 0) {
+        setToDos(parsedToDos);
+      }
     }
   }, []);
 
@@ -20,10 +23,13 @@ function ToDo() {
 
   const handleToDoSubmit = (event) => {
     event.preventDefault();
+    if (!toDo.trim()) return; // 입력값이 없으면 처리하지 않음
+
     const newToDo = {
       text: toDo,
       id: Date.now(),
     };
+
     setToDos((prevToDos) => [...prevToDos, newToDo]);
     setToDo("");
   };
@@ -44,10 +50,10 @@ function ToDo() {
         />
       </form>
       <ul id="todo-list">
-        {toDos.map((toDo) => (
-          <li key={toDo.id}>
-            <span>{toDo.text}</span>
-            <button onClick={() => handleDelete(toDo.id)}>x</button>
+        {toDos.map((toDoItem) => (
+          <li key={toDoItem.id}>
+            <span>{toDoItem.text}</span>
+            <button onClick={() => handleDelete(toDoItem.id)}>x</button>
           </li>
         ))}
       </ul>

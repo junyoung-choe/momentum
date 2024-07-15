@@ -8,7 +8,7 @@ function Weather() {
     const onGeoOk = (position) => {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
-      const key = "YOUR_API_KEY"; // 여기에 API 키를 입력하세요
+      const key = "d855d4fda183f5e0337de6e12340a4b4"; // 여기에 API 키를 입력하세요
       const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${key}&units=metric`;
 
       fetch(url)
